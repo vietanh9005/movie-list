@@ -1,0 +1,272 @@
+﻿:root {
+  --bg: #f4efe6;
+  --bg-alt: #efe5d6;
+  --surface: #fffaf2;
+  --surface-strong: #ffffff;
+  --text: #1f1c16;
+  --muted: #6f685e;
+  --border: #e4d8c3;
+  --accent: #b6492f;
+  --accent-hover: #993c26;
+  --shadow: 0 12px 30px rgba(47, 29, 12, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% -20%, #ffe6bd 0, transparent 35%),
+    radial-gradient(circle at 90% 0%, #ffd7c6 0, transparent 25%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+
+.appShell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 18px 40px;
+}
+
+.hero {
+  padding: 24px;
+  background: linear-gradient(135deg, #fff4df 0%, #ffe3c9 100%);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0;
+  color: #8b5a2b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  margin: 8px 0;
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  line-height: 1.12;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 56ch;
+}
+
+.panel {
+  margin-top: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.searchRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: center;
+}
+
+.searchRow input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 12px;
+  font-size: 1rem;
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+.searchRow input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(182, 73, 47, 0.18);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.btn {
+  height: 42px;
+  border-radius: 11px;
+  border: 1px solid var(--border);
+  padding: 0 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background-color 0.14s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.btnPrimary {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(182, 73, 47, 0.25);
+}
+
+.btnPrimary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btnGhost {
+  background: var(--surface-strong);
+  color: var(--text);
+}
+
+.btnPager {
+  min-width: 120px;
+  background: var(--surface-strong);
+}
+
+.statusRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin: 16px 0 12px;
+}
+
+.statusRow h2 {
+  margin: 0;
+  font-size: 1.12rem;
+}
+
+.pageTag {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.loading,
+.error {
+  margin: 10px 0;
+}
+
+.error {
+  color: #b1002d;
+}
+
+.emptyState {
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  padding: 22px;
+  text-align: center;
+  color: var(--muted);
+  background: #fffdf8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  overflow: hidden;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 8px 16px rgba(44, 28, 10, 0.06);
+}
+
+.poster {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: #eadfcf;
+}
+
+.placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.cardBody {
+  padding: 10px;
+}
+
+.cardBody h3 {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.3;
+  min-height: 2.5em;
+}
+
+.meta {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  opacity: 0.5;
+}
+
+.pager {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tmdbNote {
+  margin: 12px 0 0;
+  text-align: center;
+  color: #6a635a;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 760px) {
+  .searchRow {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .statusRow {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 14px;
+  }
+
+  .pager {
+    flex-direction: column;
+  }
+
+  .btnPager {
+    width: 100%;
+  }
+}
